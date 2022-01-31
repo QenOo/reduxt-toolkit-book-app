@@ -2,7 +2,7 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import {  } from '../../store/books/booksSlice';
 
-const BooksList = ({ isLoading, books, isLoggedIn, removeBook, dispatch }) => {
+const BooksList = ({ isLoading, books, isLoggedIn, removeBook, dispatch, reedBook }) => {
     // const dispatch = useDispatch();
     const booksList =
         books.length > 0
@@ -13,7 +13,7 @@ const BooksList = ({ isLoading, books, isLoggedIn, removeBook, dispatch }) => {
                   >
                       <div>{book.title}</div>
                       <div className='btn-group' role='group'>
-                          <button type='button' className='btn btn-primary'>
+                          <button type='button' className='btn btn-primary' onClick={() => reedBook(book.id)}>
                               Read
                           </button>
                           <button
