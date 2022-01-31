@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getBooks } from '../../store/books/booksSlice';
+import { getBooks, removeBook } from '../../store/books/booksSlice';
 
 import BookInfo from './BookInfo';
 import BooksList from './BooksList';
@@ -26,6 +26,8 @@ const PostContainer = () => {
                         isLoading={isLoading}
                         books={books}
                         isLoggedIn={isLoggedIn}
+                        removeBook={removeBook}
+                        dispatch={dispatch}
                     />
                 </div>
                 <div className='col side-line'>
